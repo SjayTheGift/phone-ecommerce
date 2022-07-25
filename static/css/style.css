@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+:root{
+    --colorWhite: #fff;
+    --colorNeutralCool: #f9f9f9;
+    --colorNeutralWarm: #f2f0eb;
+    --colorCeramic: #edebe9;
+    --colorBlack: #000;
+    --colorGreen: #006241;
+    --colorGreenApron: #00a862;
+    --colorGreenAccent: #00754a;
+    --colorGreenLight: #d4e9e2;
+    --colorGreenLightSecondary: rgba(212,233,226,0.33);
+    --colorHouseGreen: #1e3932;
+    --heart: rgb(244, 105, 122);
+    --danger: rgb(255, 44, 69);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.4;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+  
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    padding: 0;
+    margin: 0;
+}
+
+.bin{
+    color: var(--danger);
+}
+
+.btn{
+    cursor: pointer;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.btn-green{
+    padding: 8px 10px;
+    background-color: var(--colorGreenApron);
+    color: var(--colorWhite);
+}
+
+.btn-login{
+    padding: 5px 20px;
+    background-color: var(--colorGreenAccent);
+    color: var(--colorWhite) !important;
+    margin-right: 20px;
+}
+
+.cart-quantity{
+    margin-left: 10px;
+}
+
+.heart{
+    border-radius: 50%;
+    background-color: var(--heart);
+    color: var(--colorWhite);
+    padding: 8px;
+}
+
+/*=======================================
+                NavBar 
+=========================================*/
+
+.navbar{
+    width: 100%;
+    height: auto;
+    background: var(--colorWhite);
+    padding: 20px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+    font-weight: 700;
+    font-size: 14px; 
+}
+
+
+.navbar-left a,
+.navbar-right li:first-child a,
+.navbar-right li:nth-child(2) a{
+    color: var(--colorGreen);
+}
+
+.nav-container{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left{
+    flex: 1;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.navbar-left li a:hover, 
+.navbar-right li:first-child a:hover,
+.navbar-right li:nth-child(2) a:hover{
+    border-bottom: 1px solid var(--colorGreenAccent);
+}
+
+.navbar-left li, .navbar-right li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.navbar-left li:first-child{
+    margin-left: 30px;
+}
+
+.navbar-left li a, .navbar-right li a{
+    text-decoration: none;
+}
+
+.align-icon{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.heart:hover{
+    background-color: rgb(232, 60, 80);
+}
+
+.btn-green:hover{
+    background-color: var(--colorGreen);
+}
+.mobile-nav{
+    display: none;
+}
+
+.nav-hidden{
+    transform: translateX(100%);
+}
+
+.brand{
+    text-transform: uppercase;
+    background-color: var(--colorGreen);
+    border-radius: 50%;
+    padding: 10px 20px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    color: var(--colorWhite);
+    font-size: 13px;
+    text-align: center;
+    padding: 20px;
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    background: none;
+    border: none;
+    z-index: 30;
+    transition: all 0.25s;
+    display: none;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #333;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+    transform: translateY(7px);
+}
+  
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+  }
+  
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.cart-mobile{
+    color: var(--colorGreenApron);
+}
+
+.heart-mobile{
+    color: var(--heart);
+}
+
+.cart-text, .hear-text{
+    margin-left: 20px;
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+.grid-4{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 20px;
+}
+
+.col{
+    margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 0 20px;
+    max-width: 100%;
+}
+
+.col img{
+    width: 180px;
+    height: 180px;
+    max-width: 100%;
+     position: relative;
+     top: 100px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.btn-product{
+    border: 1px solid var(--colorGreenAccent);
+    border-radius: 5px;
+    color: var(--colorGreenAccent);
+    padding: 10px 20px;
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.btn-product:hover{
+    background-color: var(--colorGreenAccent);
+    color: var(--colorWhite);
+    cursor: pointer;
+}
+
+.mobile-description{
+    margin-bottom: 20px;
+    color: var(--colorBlack);
+}
+
+.btn-product span{
+    padding-left: 20px;
+}
+
+.price{
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+
+/* ======================================
+            Checkout
+=========================================*/
+
+.cart-heading{
+    margin: 20px 0;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1f;
+    gap: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'myArea myArea myArea myArea checkoutside';
+}
+
+.main{
+    grid-area: myArea;
+}
+
+.sidebar{
+    grid-area: checkoutside;
+}
+
+.col-checkout, .col-side{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+    max-width: 100%;
+    margin-right: 20px;
+}
+
+.col-checkout img{
+    max-width: 100%;
+    width: 60px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Item-name{
+    flex: 1;
+    padding: 0 20px;
+}
+
+.action{
+    display: flex;
+    flex-direction: column;
+}
+
+.action a{
+    padding: 10px;
+    margin-left: 30px;
+}
+
+.checkout-text:hover{
+    color: var(--colorWhite);
+}
+
+.btn-checkout{
+    display: block;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.btn-checkout:hover{
+    background-color: var(--colorGreenAccent);
+    color: var(--colorWhite) !important;
+}
+
+@media(max-width:768px){
+
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+
+    .main{
+        width: 100%;
+        margin: 0;
+    }
+    .sidebar{
+        margin-top: 0;
+        grid-area: 3/1;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+    .mobile-hide{
+        display: none;
+    }
+
+    .col-checkout, .col-side{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 20px;
+        max-width: 100%;
+        margin-right: 0;
+    } 
+
+    .grid-2{
+        grid-template-columns: 1fr;
+    }
+
+    .grid-reversed :first-child {
+        order: 1;
+    } 
+    .box-text, .box-text-2 {
+        width: calc(100% * (6 / 8));
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .navbar-right, .navbar-left{
+        display: none;
+    }
+
+    .mobile-nav{
+        display: block;
+        position: fixed;
+        top:100px;
+        right: 0px;
+        margin-top: 10px;
+        background-color: var(--colorWhite);
+        padding: 10px 20px;
+        width: 80%;
+        font-size: 20px;
+        height: 100%;
+        transition: all 0.5s;
+        box-shadow: inset 0 4px 3px -3px rgb(0 0 0 / 10%), inset 0 4px 2px -2px rgb(0 0 0 / 7%);
+        border-left: 2px solid var(--colorGreen);
+        z-index: 99999;
+    }
+
+    .align-icon a:hover{
+        color: var(--colorGreenAccent);
+    }
+    
+    .line{
+        background-color: var(--colorNeutralWarm);
+        color: var(--colorNeutralWarm);
+        width: 80% auto;
+        height: 2px;
+    }
+
+    .mobile-navbar a{
+        text-decoration: none;
+        color: var(--colorGreen);
+    }
+
+    .mobile-navbar li{
+        margin: 20px 0;
+    }
+    .grid-4{
+        gap: 10px;
+    }
+    .col{
+        margin-top: 20px;
+    }
+}
+
+@media(max-width:480px){
+    .flex-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .action{
+        flex-direction: row;
+    }
+    .action a{
+        margin-left: 0px;
+    }
+    
+}

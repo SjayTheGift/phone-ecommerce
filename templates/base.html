@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone-Shop</title>
+
+    <!-- Font Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <p class="logo">Phone Stop</p>
+            </div>
+            <ul class="navbar-left">
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="#">Phones</a>
+                </li>
+            </ul>
+            <ul class="navbar-right">
+                <li>
+                    <a href="#" class="">Login</a>
+                </li>
+                <li>
+                    <a href="#" class="">Register</a>
+                </li>
+                <li>
+                    <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                </li>
+                <li>
+                    <a href="{% url 'checkout' %}" class="btn btn-green">
+                        <i class="fas fa-shopping-cart"></i> 
+                        <span class="cart-quantity">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger" id="menu-btn">
+                <div class="hamburger-top"></div>
+                <div class="hamburger-middle"></div>
+                <div class="hamburger-bottom"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- navbar Mobile -->
+    <nav class="mobile-nav nav-hidden">
+        <div class="mobile-nav-container">
+            <ul class="mobile-navbar">
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="#">Phones</a>
+                </li>
+                <div class="line"></div>
+                <li>
+                    <a href="{% url 'checkout' %}" class="btn"> <i class="fas fa-shopping-cart cart-mobile"></i><span class="cart-text">Cart</span> (0)</a>
+                </li>
+                <li>
+                    <a href="#" class="btn"><i class="fas fa-heart heart-mobile"></i><span class="hear-text"></span>Lists</a>
+                </li>
+                <div class="line"></div>
+                <li>
+                    <a href="" class="btn btn-login"><i class="fas fa-solid fa-user"></i> Login</a>
+                    <a href class="btn">Register</a>
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+  {% block content %}
+
+  {% endblock %}
+
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <section class="checkout">
+        <div class="container">
+            <h1 class="cart-heading">Shopping Cart</h1>
+            <div class="grid-container">
+                <div class="main">
+                    <div class="grid">
+                        <!-- checkout col -->
+                        <div class="col-checkout flex-container"> 
+                            <img src="{% static 'img/apple_11.file' %}" alt="apple 11">
+                            <p class="Item-name">Apple 11</p>
+                            <div class="quantity-container">
+                                <p class="price"> R 13000.00</p>
+                                <label for="Quantity">Quantity:</label>
+                                <select id="quantity" name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
+                            <div class="action">
+                                <a href="#" class="btn-checkout">
+                                    <i class="fas fa-heart heart-mobile"></i>
+                                    <span class="checkout-text">Move to list</span> 
+                                </a> 
+                                <a href="#" class="btn-checkout">
+                                    <i class="fa fa-trash bin"></i> <span class="checkout-text">Remove</span></a>
+                            </div>
+                        </div>
+                        <!-- endCheckout col -->
+                        <!-- checkout col -->
+                        <div class="col-checkout flex-container"> 
+                            <img src="{% static 'img/galaxy_note_10.file' %}" alt="galaxy_note_10">
+                            <p class="Item-name">Galaxy note 10</p>
+                            <div class="quantity-container">
+                                <p class="price"> R 20000.00</p>
+                                <label for="Quantity">Quantity:</label>
+                                <select id="quantity" name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
+                            <div class="action">
+                                <a href="#" class="btn-checkout">
+                                    <i class="fas fa-heart heart-mobile"></i>
+                                    <span class="checkout-text">Move to list</span> 
+                                </a> 
+                                <a href="#" class="btn-checkout">
+                                    <i class="fa fa-trash bin"></i> <span class="checkout-text">Remove</span></a>
+                            </div>
+                        </div>
+                        <!-- endCheckout col -->
+                        <!-- checkout col -->
+                        <div class="col-checkout flex-container"> 
+                            <img src="{% static 'img/blackview_a60.webp' %}" alt="blackview a60">
+                            <p class="Item-name">Blackview A60</p>
+                            <div class="quantity-container">
+                                <p class="price"> R 1000.00</p>
+                                <label for="Quantity">Quantity:</label>
+                                <select id="quantity" name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
+                            <div class="action">
+                                <a href="#" class="btn-checkout">
+                                    <i class="fas fa-heart heart-mobile"></i>
+                                    <span class="checkout-text">Move to list</span> 
+                                </a> 
+                                <a href="#" class="btn-checkout">
+                                    <i class="fa fa-trash bin"></i> <span class="checkout-text">Remove</span></a>
+                            </div>
+                        </div>
+                        <!-- endCheckout col -->
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="grid">
+                        <div class="col-side">
+                            <p>Cary Summary</p>
+                        </div>
+                        <div class="col-side mobile-hide">
+                           <p>Secure checkout</p> 
+                           <p>Many ways to pay</p>
+                           <p>Fast, reliable delivery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
