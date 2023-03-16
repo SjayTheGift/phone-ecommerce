@@ -5,32 +5,14 @@
     <section class="Main-Section">
         <div class="container">
             <div class="grid-4">
-                <div class="col">
-                    <img src="{% static 'img/apple_11.file' %}" alt="apple 11">
-                    <p class="mobile-description">Apple 11</p>
-                    <p class="price">R 13000.00</p>
-                    <a class="btn-product"><i class="fas fa-shopping-cart"></i> <span>Add to Cart</span></a>
-                </div>
-                <div class="col">
-                    <img src="{% static 'img/huawei_nova_8.file' %}" alt="huawei nova 8">
-                    <p class="mobile-description">Huawei nova 8</p>
-                    <p class="price">R 20000.00</p>
-                    <a class="btn-product"><i class="fas fa-shopping-cart"></i> <span>Add to Cart</span></a>
-                </div>
-                <div class="col">
-                    <img src="{% static 'img/nokia_215.file' %}" alt="nokia 215">
-                    <p class="mobile-description">Nokia 215</p>
-                    <p class="price">R 1000.00</p>
-                    <a class="btn-product"><i class="fas fa-shopping-cart"></i> <span>Add to Cart</span></a>
-                </div>
-                <div class="col">
-                    <img src="{% static 'img/blackview_a60.webp' %}" alt="blackview a60">
-                    <p class="mobile-description">Blackview A60</p>
-                    <p class="price">R 1000.00</p>
-                    <a class="btn-product"><i class="fas fa-shopping-cart"></i> <span>Add to Cart</span></a>
-                </div>
-
-
+                {% for product in products %}
+                    <div class="col">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <p class="mobile-description">{{ product.name }}</p>
+                        <p class="price">R {{ product.price|floatformat:2 }}</p>
+                        <a class="btn-product" href="#" data-product="{{product.id}}" data-add="add"><i class="fas fa-shopping-cart"></i> <span>Add to Cart</span></a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>

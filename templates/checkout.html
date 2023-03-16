@@ -10,91 +10,50 @@
                 <div class="main">
                     <div class="grid">
                         <!-- checkout col -->
-                        <div class="col-checkout flex-container"> 
-                            <img src="{% static 'img/apple_11.file' %}" alt="apple 11">
-                            <p class="Item-name">Apple 11</p>
-                            <div class="quantity-container">
-                                <p class="price"> R 13000.00</p>
-                                <label for="Quantity">Quantity:</label>
-                                <select id="quantity" name="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select>
-                            </div>
-                            <div class="action">
-                                <a href="#" class="btn-checkout">
-                                    <i class="fas fa-heart heart-mobile"></i>
-                                    <span class="checkout-text">Move to list</span> 
-                                </a> 
-                                <a href="#" class="btn-checkout">
-                                    <i class="fa fa-trash bin"></i> <span class="checkout-text">Remove</span></a>
-                            </div>
+
+                        {% if items %}
+                            {% for item in items %}
+                                <div class="col-checkout flex-container"> 
+                                    <img src="{{ item.product.image.url }}" alt="{{item.product.name}}">
+                                    <p class="Item-name">{{ item.product.name }}</p>
+                                    <div class="quantity-container">
+                                        <p class="price"> R {{ item.get_total|floatformat:2 }}</p>
+                                        <div class="quantity">
+                                            <label for="Quantity">Quantity:</label>
+                                            <p class="mr-2">{{item.quantity}}</p>
+                                            
+                                            <div class="con">
+                                                <a href="#" class="update-cart" data-product="{{item.product.id}}" data-add="add"><i class="fa fa-caret-up fx-2" aria-hidden="true"></i></a>
+                            
+                                                <a href="#" class="update-cart" data-product="{{item.product.id}}" data-add="remove"><i class="fa fa-caret-down fx-2" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="action">
+                                        <a href="#" class="btn-checkout">
+                                            <i class="fas fa-heart heart-mobile"></i>
+                                            <span class="checkout-text">Move to list</span> 
+                                        </a> 
+                                        <a href="#" class="btn-checkout btn-remove" data-product="{{item.product.id}}">
+                                            <i class="fa fa-trash bin"></i> 
+                                            <span class="checkout-text">Remove</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                        <div class="col-checkout flex-2"> 
+                            <h2 class="text-center mt-4 mb-2">Shopping Cart Empty</h2>
+                            <a href="{% url 'home' %}" class="btn btn-secondary mb-2">Continue Shopping</a>
                         </div>
-                        <!-- endCheckout col -->
-                        <!-- checkout col -->
-                        <div class="col-checkout flex-container"> 
-                            <img src="{% static 'img/galaxy_note_10.file' %}" alt="galaxy_note_10">
-                            <p class="Item-name">Galaxy note 10</p>
-                            <div class="quantity-container">
-                                <p class="price"> R 20000.00</p>
-                                <label for="Quantity">Quantity:</label>
-                                <select id="quantity" name="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select>
-                            </div>
-                            <div class="action">
-                                <a href="#" class="btn-checkout">
-                                    <i class="fas fa-heart heart-mobile"></i>
-                                    <span class="checkout-text">Move to list</span> 
-                                </a> 
-                                <a href="#" class="btn-checkout">
-                                    <i class="fa fa-trash bin"></i> <span class="checkout-text">Remove</span></a>
-                            </div>
-                        </div>
-                        <!-- endCheckout col -->
-                        <!-- checkout col -->
-                        <div class="col-checkout flex-container"> 
-                            <img src="{% static 'img/blackview_a60.webp' %}" alt="blackview a60">
-                            <p class="Item-name">Blackview A60</p>
-                            <div class="quantity-container">
-                                <p class="price"> R 1000.00</p>
-                                <label for="Quantity">Quantity:</label>
-                                <select id="quantity" name="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select>
-                            </div>
-                            <div class="action">
-                                <a href="#" class="btn-checkout">
-                                    <i class="fas fa-heart heart-mobile"></i>
-                                    <span class="checkout-text">Move to list</span> 
-                                </a> 
-                                <a href="#" class="btn-checkout">
-                                    <i class="fa fa-trash bin"></i> <span class="checkout-text">Remove</span></a>
-                            </div>
-                        </div>
+
+                        {% endif %}
+
+
+                      
                         <!-- endCheckout col -->
                     </div>
                 </div>
@@ -102,6 +61,11 @@
                     <div class="grid">
                         <div class="col-side">
                             <p>Cary Summary</p>
+                            
+                            <h3 class="mt-2 mb-2 flex"><span>Total: (Item:{{ order.get_cart_items }})</span>  <span class="price">R {{ order.get_cart_total|floatformat:2 }}</span></h3>
+                            <!-- <p class="mb-3">Items : {{ order.get_cart_items }}</p> -->
+
+                            <a href="{% url 'checkout' %}" class="btn btn-custom btn-block mb-2">Proceed to Checkout</a>
                         </div>
                         <div class="col-side mobile-hide">
                            <p>Secure checkout</p> 

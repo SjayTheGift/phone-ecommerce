@@ -46,24 +46,100 @@ li{
     color: var(--danger);
 }
 
+/* Utilites */
+.text-center{
+    text-align: center;
+}
+
+.mt-1{
+    margin-top: 10px;  
+}
+
+.mt-2{
+  margin-top: 20px;  
+}
+
+.mt-3{
+    margin-top: 30px;  
+}
+
+.mt-4{
+    margin-top: 40px;  
+}
+
+.mb-1{
+    margin-bottom: 10px;  
+}
+
+.mb-2{
+  margin-bottom: 20px;  
+}
+
+.mb-3{
+    margin-bottom: 30px;  
+}
+
+.mb-4{
+    margin-bottom: 40px;  
+}
+
+
+/* margin right */
+.mr-1{
+    margin-right: 10px;  
+}
+
+.mr-2{
+  margin-right: 20px;  
+}
+
+.mr-3{
+    margin-right: 30px;  
+}
+
+.mr-4{
+    margin-right: 40px;  
+}
+
+
+/* margin left */
+.mr-1{
+    margin-left: 10px;  
+}
+
+.mr-2{
+  margin-left: 20px;  
+}
+
+.mr-3{
+    margin-left: 30px;  
+}
+
+.mr-4{
+    margin-left: 40px;  
+}
+
+
+
 .btn{
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 3px;
     text-decoration: none;
+    border: none;
+    text-align: center;
+}
+
+.btn-block{
+    width: 100% !important;
 }
 
 .btn-green{
     padding: 8px 10px;
     background-color: var(--colorGreenApron);
     color: var(--colorWhite);
+    border: none;
 }
 
-.btn-login{
-    padding: 5px 20px;
-    background-color: var(--colorGreenAccent);
-    color: var(--colorWhite) !important;
-    margin-right: 20px;
-}
 
 .cart-quantity{
     margin-left: 10px;
@@ -72,8 +148,14 @@ li{
 .heart{
     border-radius: 50%;
     background-color: var(--heart);
-    color: var(--colorWhite);
+    color: var(--colorWhite) !important;
     padding: 8px;
+}
+
+.heart:hover{
+    background-color: var(--danger) !important;
+    color: var(--colorWhite) !important;
+    border-bottom: none !important;
 }
 
 /*=======================================
@@ -141,10 +223,6 @@ li{
     display: flex;
     align-items: center;
     text-transform: uppercase;
-}
-
-.heart:hover{
-    background-color: rgb(232, 60, 80);
 }
 
 .btn-green:hover{
@@ -242,6 +320,12 @@ li{
 .container{
     max-width: 1140px;
     margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 
@@ -350,6 +434,12 @@ li{
     align-items: center;
 }
 
+.flex-2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .Item-name{
     flex: 1;
     padding: 0 20px;
@@ -380,6 +470,101 @@ li{
     background-color: var(--colorGreenAccent);
     color: var(--colorWhite) !important;
 }
+
+.quantity{
+    display: flex;
+    align-items: center;
+}
+
+.con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-caret-up, .fa-caret-down{
+    font-size: 30px;
+}
+
+.price{
+    color: var(--colorGreen) !important;
+}
+
+/* Forms */
+#login, #register, #profile{
+    margin-top: 50px;
+}
+
+#hint_id_new_password1{
+    display: none;
+}
+
+.mx-auto{
+    margin: 0 auto;
+    width: 500px;
+}
+
+.card{
+    background-color: var(--colorNeutralCool);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px 20px;
+}
+
+
+.card-header h4{
+    font-size: 24px;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    padding: 10px 20px;
+}
+
+.errorlist {
+    margin: 20px 0;
+    border: 1px solid var(--danger);
+    color: var(--colorWhite);
+    background-color: var(--danger);
+    padding: 10px 20px;
+}
+
+.invalid-feedback{
+    font-size: 14px;
+    color: var(--danger);
+    /* margin: 5px 0; */
+}
+
+.btn-custom{
+    padding: 10px 20px;
+    background-color: var(--colorGreenAccent);
+    color: var(--colorWhite) !important;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.btn-secondary{
+    padding: 10px 20px;
+    background-color: var(--colorBlack);
+    color: var(--colorWhite) !important;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+
+.btn-custom:hover{
+    background-color: var(--colorGreen);
+}
+
+.btn-secondary:hover{
+    background-color: rgb(20, 20, 20);
+}
+
 
 @media(max-width:768px){
 
@@ -483,5 +668,8 @@ li{
     .action a{
         margin-left: 0px;
     }
-    
+    .mx-auto{
+        margin: 0 auto;
+        width: 100%;
+    }
 }

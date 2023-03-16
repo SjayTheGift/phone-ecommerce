@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="Main-Section">
+        <div class="container">
+            <div class="grid-4">
+                <div class="col">
+                    {% if shippingAddress %}
+                        {% for shipping in shippingAddress %}
+                        <div class="col">
+                            <p>{{shipping}}</p>
+                        </div>
+                            
+                        
+                        <div class="col">
+                            <!-- <form action="" method="post"> -->
+                                <div id="paypal-button-container"></div>
+                                <input type="submit" value="Make Payment" class="btn btn-custom btn-block mt-2 mb-4">
+                            <!-- </form> -->
+                        </div>
+                        {% endfor %}
+                    {% else%}
+                </div>
+                    <div class="col">
+                        <form class="login" method="POST" action="{% url 'checkout' %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                           <input type="submit" value="Add Address" class="btn btn-custom btn-block mt-2 mb-4">
+                         </form>
+                    </div>
+                    {% endif %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
