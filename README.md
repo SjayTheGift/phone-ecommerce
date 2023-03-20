@@ -6,7 +6,7 @@ A small e-commerce store for selling phone. The app is built using django, it ha
 
 ## Demo
 
-Insert gif or link to demo
+https://youtu.be/_dhqa8WqQe0
 
 
 
